@@ -4,7 +4,7 @@
 -- PRODUCT NAME
 -- This the name used for the product provided by this repo
 -- (On windows used as the solution name)
-cmox_product_name = "MoxPP"
+cmox_product_name = "CppHTMX"
 
 -- CONFIGURATIONS
 -- The first array _n are the configuration names
@@ -44,13 +44,13 @@ cmox_project_architecture = "single"
 
 -- MACRO PREFIX
 -- This will be prepended to ALL non default macros
-cmox_macro_prefix = "MOXPP_"
+cmox_macro_prefix = "CWX_"
 
 -- UNITTEST
 -- This defines where to find the unit test code.
 -- You can set this to nil. When set to nil no test will be configured. 
 -- You can delete the default test folder then
-cmox_unit_test_src = "test"
+cmox_unit_test_src = nil
 
 -- === Custom callback functions ===
 -- This is the way to go when implementing custom features
@@ -61,9 +61,11 @@ cmox_unit_test_src = "test"
 -- end
 
 -- This function is called for each project when it's beeing configured
--- function cmox_function_setupproject()
---     ...
--- end
+function cmox_function_setupproject()
+    defines {
+        "FMT_UNICODE=0",
+    }
+end
 
 -- This function is called in manual configuration to include 
 -- the project
